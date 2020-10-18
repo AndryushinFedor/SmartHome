@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_121725) do
+ActiveRecord::Schema.define(version: 2020_10_18_123156) do
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 2020_10_18_121725) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "author"
+  end
+
+  create_table "subscribers", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "comments", "posts"
