@@ -5,6 +5,8 @@
   <%= @post.name %>
 </p>
 
+<%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+
 <h2>Comments</h2>
 <%= render @post.comments %>
 
