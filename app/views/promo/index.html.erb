@@ -1,4 +1,18 @@
-<h1>Promo#index</h1>
-<p>Find me in app/views/promo/index.html.erb</p>
+<h1>Domestech</h1>
 
-<%= link_to "About", about_path %>
+<div class="body">
+  <div class="nav">
+    <h2>Domestech</h2>
+    <p> <%= link_to "О нас", about_path %> </p>
+    <p> <%= link_to "Блог", posts_path %> </p>
+    <a>Сценарий</a>
+    <a>Устройства</a>
+  </div>
+  <h1>Ваш дом хочет поумнеть!</h1>
+  <p>Встречайте новый медиапроект об&nbsp;умной технике!
+Мы&nbsp;расскажем, как собрать свою экосистему
+из&nbsp;готовых модулей, подберём устройства
+и&nbsp;интересные сценарии использования.</p>
+<h2>Узнать раньше всех о запуске проекта:</h2>
+<%= render "subscribers/form" %>
+</div>

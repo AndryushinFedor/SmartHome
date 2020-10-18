@@ -7,6 +7,8 @@ post = Post.create(
 
 puts "Some magic just create a #{ post.name } with id #{ post.id }!"
 
+image: File.open(Rails.root.join('public', 'images', 'pic-1.jpg'))
+
 posts = [
 {
 	name: "New Album",
