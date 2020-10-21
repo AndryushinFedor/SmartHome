@@ -1,3 +1,45 @@
 // Place all the styles related to the Promo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.body {
+  background-color: #273A3D;
+  height: 1020px;
+}
+.promoBody {
+  font-family: 'Raleway', sans-serif;
+}
+
+.nav {
+}
+
+.promoBody h1{
+  font-size: 84px;
+  width: 100%;
+  padding: 0;
+  color: #F6FCFF;
+}
+
+.promoMain {
+  color: #CADEE1;
+}
+
+.name h2 {
+  font-size: 36px;
+  color: #F6FCFF;
+}
+
+.nav p {
+  font-size: 24px;
+  color: #F6FCFF;
+}
+
+.promoMain {
+  font-size: 24px;
+}
+
+.promoMain h2 {
+  font-size: 36px;
+}
