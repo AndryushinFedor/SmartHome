@@ -7,12 +7,12 @@
 .body {
   background-color: #273A3D;
   height: 1020px;
-}
-.promoBody {
   font-family: 'Raleway', sans-serif;
+
 }
 
 .nav {
+  color: #F6FCFF;
 }
 
 .promoBody h1{
@@ -20,13 +20,14 @@
   width: 100%;
   padding: 0;
   color: #F6FCFF;
+  font-style: 900;
 }
 
 .promoMain {
   color: #CADEE1;
 }
 
-.name h2 {
+.name {
   font-size: 36px;
   color: #F6FCFF;
 }
