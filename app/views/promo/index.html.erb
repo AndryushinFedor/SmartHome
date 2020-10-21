@@ -1,21 +1,26 @@
 <div class="body">
-  <h2 class="name">Domestech</h2>
+  <%= image_tag 'Back', class: 'promoBackImg'%>
   <div class="promoBody">
     <div class="nav">
-      <p> <%= link_to "О нас", about_path %> </p>
-      <p> <%= link_to "Блог", posts_path %> </p>
-      <p>Сценарий</p>
-      <p>Устройства</p>
+      <h2 class="name">Domestech</h2>
+      <p> <%= link_to "О нас", about_path, class: "link" %> </p>
+      <p> <%= link_to "Сценарии", posts_path, class: "link" %> </p>
+      <p> <%= link_to "Устройства", posts_path, class: "link" %></p>
+      <p><%= link_to "Статьи", posts_path, class: "link" %></p>
     </div>
     <div class="promoMain">
-      <%= image_tag("1.jpg", :alt => "rss feed") %>
-      <h1>Ваш дом <br> хочет поумнеть!</h1>
-      <p>Встречайте новый медиапроект об&nbsp;умной технике!
-    Мы&nbsp;расскажем, как собрать свою экосистему
-    из&nbsp;готовых модулей, подберём устройства
-    и&nbsp;интересные сценарии использования.</p>
-    <h2>Узнать раньше всех о запуске проекта:</h2>
-    <%= render "subscribers/form" %>
+      <%= image_tag '1', class: 'promoMainImg'%>
+      <div class="text">
+        <h1>Ваш дом <br> хочет поумнеть!</h1>
+        <p>Встречайте новый медиапроект об&nbsp;умной технике! <br>
+          Мы&nbsp;расскажем, как собрать свою экосистему <br>
+          из&nbsp;готовых модулей, подберём устройства <br>
+          и&nbsp;интересные сценарии использования. <br></p>
+      <div class="form">
+        <h2>Узнать о запуске</h2>
+        <%= render "subscribers/form" %>
+      </div>
+    </div>
     </div>
   </div>
 </div>
