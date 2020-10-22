@@ -12,6 +12,7 @@
     <thead>
       <tr>
         <th class="postName">Название</th>
+        <th class="postTitle">Описание</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -20,7 +21,7 @@
         <tr>
           <td><%= post.name %></td>
           <td><%= post.title %></td>
-          <td><%= image_tag(post.image.url, alt: 'Image')%></td>
+          <td><%= image_tag post.image.url if post.image? %></td>
           <td><%= link_to 'Show', post %></td>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
           <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
