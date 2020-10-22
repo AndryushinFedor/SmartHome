@@ -10,26 +10,22 @@
   <h1>Посты</h1>
 
   <table>
-    <thead>
-      <tr>
-        <th>Имя</th>
-        <th>Название</th>
-        <th>Контент</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
+    <tbody class="mainBody">
       <% @posts.each do |post| %>
-        <tr>
-          <td><%= post.name %></td>
-          <td><%= post.title %></td>
-          <td><%= post.content %></td>
-          <td><%= link_to 'Show', post %></td>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <tr class="mainBody">
+          <div class="image">
+            <td class="img"><%= image_tag post.image.url if post.image? %></td>
+          </div>
+          <div class="textBody">
+            <div class="tagBody">
+              <td class="tag"><a><%= post.name %></a></td>
+            </div>
+            <td class="title"><%= post.title %></td>
+            <td class="content"><%= post.content %></td>
+          </div>
         </tr>
       <% end %>
+      <td class="editing"><%= link_to 'New Post', new_post_path %></td>
     </tbody>
   </table>
 
