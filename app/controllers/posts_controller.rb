@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
+  http_basic_authenticate_with :name => "admin", :password => "admin", :except => [:show, :index]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
-  http_basic_authenticate_with :name => "admin", :password => "superstrongpassword", :except => [:index, :show]
 
   # GET /posts
   # GET /posts.json
@@ -71,6 +70,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-    	params.require(:post).permit(:name, :title, :author, :content, :image)
+      params.require(:post).permit(:name, :title, :content, :image, :time, :ingredients)
     end
 end

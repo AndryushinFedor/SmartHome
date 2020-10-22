@@ -1,36 +1,31 @@
-<div class="body1">
-  <p id="notice"><%= notice %></p>
-  <div class="nav1">
+<p id="notice"><%= notice %></p>
+<div class="nav1">
     <p> <%= link_to "Domestech", promo_path, class: "name1" %> </p>
-    <p> <%= link_to "О нас", about_path, class: "link1" %> </p>
-    <p> <%= link_to "Сценарии", posts_path, class: "link1" %> </p>
-    <p> <%= link_to "Устройства", posts_path, class: "link1" %></p>
-    <p><%= link_to "Статьи", posts_path, class: "link1" %></p>
-  </div>
-  <h1>Посты</h1>
-
+  <p> <%= link_to "О нас", about_path, class: "link1" %> </p>
+  <p> <%= link_to "Сценарии", posts_path, class: "link1" %> </p>
+  <p> <%= link_to "Устройства", posts_path, class: "link1" %></p>
+  <p><%= link_to "Статьи", posts_path, class: "link1" %></p>
+</div>
+<div class="mainBody">
+  <%= link_to "Новый пост", new_post_path, class: "btnPost" %>
   <table>
-    <tbody class="mainBody">
+    <thead>
+      <tr>
+        <th class="postName">Название</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
       <% @posts.each do |post| %>
-        <tr class="mainBody">
-          <div class="image">
-            <td class="img"><%= image_tag post.image.url if post.image? %></td>
-          </div>
-          <div class="textBody">
-            <div class="tagBody">
-              <td class="tag"><a><%= post.name %></a></td>
-            </div>
-            <td class="title"><%= post.title %></td>
-            <td class="content"><%= post.content %></td>
-          </div>
+        <tr>
+          <td><%= post.name %></td>
+          <td><%= post.title %></td>
+          <td><%= image_tag(post.image.url, alt: 'Image')%></td>
+          <td><%= link_to 'Show', post %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
-      <td class="editing"><%= link_to 'New Post', new_post_path %></td>
     </tbody>
   </table>
-
-  <br>
-
-  <%= link_to 'Новый пост', new_post_path %>
-
 </div>

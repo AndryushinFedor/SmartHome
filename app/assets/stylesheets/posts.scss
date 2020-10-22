@@ -7,57 +7,69 @@
   padding-bottom: 200px;
 }
 
-.mainBody {
-  margin: 0px 40px 40px 40px;
+.nav1 {
+  padding-bottom: 200px;
   font-family: 'Raleway', sans-serif;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
-.postBody {
-  width: 680px;
-  height: 400px;
-  border-radius: 20px;
-  padding: 0 0px;
-  display: block;
-  box-sizing: border-box;
-  padding-bottom: 30px;
-  position: relative;
+Img {
+  width: 400px;
+  height: auto;
 }
 
-.tag {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
+.mainBody {
+  padding-left: 114px;
+  width: 1400px;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+}
+
+
+.postBody h1 {
   color: #273A3D;
-  margin: 14px 20px;
-  line-height: 24px;
-  a {
-    border: 0.5px solid #5A5A5A;
-    border-radius: 20px;
-    padding: 4px 16px;
-  }
-}
-
-.title {
+  font-size: 60px;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 24px;
-  color: #273A3D;
-  margin: 14px 20px;
+  padding-bottom: 40px;
 }
-
-.content {
+.postName {
+  font-size: 24px;
+  font-family: 'Raleway', sans-serif;
+  padding-right: 100px;
   font-weight: 300;
-  font-size: 24px;
-  line-height: 22px;
-  color: #273A3D;
-  margin: 20px;
+  padding-bottom: -100px;
 }
 
+.postTitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  padding-right: 100px;
+  font-weight: 300;
+}
 
-img {
-  border-radius: 20px 20px 0px 0px;
+.btnPost {
+
+  font-family: 'Raleway', sans-serif;
+  font-size: 28px;
+  padding-right: 100px;
+  font-weight: Bold;
+}
+
+a {
+  text-decoration: none;
+  color: #273A3D;
+}
+
+.postContent {
+  font-family: 'Raleway', sans-serif;
+  padding-right: 100px;
+  padding-top: 100px;
+  font-size: 24px;
+  padding-right: 100px;
+  font-weight: 300;
+}
+
+.newPost {
+  font-size: 24px;
+  text-decoration: none;
+  color: #273A3D;
 }
