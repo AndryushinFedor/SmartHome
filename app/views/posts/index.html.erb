@@ -21,6 +21,8 @@
         <tr>
           <td><%= post.name %></td>
           <td><%= post.title %></td>
+          <td><%= post.author %></td>
+          <td><%= post.content.html_safe %></td>
           <td><%= image_tag post.image.url if post.image? %></td>
           <td><%= link_to 'Show', post %></td>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
