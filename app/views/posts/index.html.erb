@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 <div class="nav1">
-    <p> <%= link_to "Доместех", promo_path, class: "name1" %> </p>
+    <p> <%= link_to "Доместех", promo_path, class: "name1" %> </p
+  <h2>All Categories</h2>
+  <% Category.all.each do |cat| %>
+  	<%= link_to cat.name, posts_path(category: cat.name) %> <br>
+  <% end %>
   <p> <%= link_to "О нас", about_path, class: "link1" %> </p>
   <p> <%= link_to "Сценарии", posts_path, class: "link1" %> </p>
   <p> <%= link_to "Устройства", posts_path, class: "link1" %></p>
@@ -8,6 +12,7 @@
 </div>
 <div class="mainBody">
   <%= link_to "Новый пост", new_post_path, class: "btnPost" %>
+  <%= link_to 'New Category', new_category_path %>
   <table>
     <thead>
       <tr>
@@ -22,7 +27,10 @@
           <td><%= post.name %></td>
           <td><%= post.title %></td>
           <td><%= post.author %></td>
+          <td><%= post.category.name %></td>
           <td><%= post.content.html_safe %></td>
+          <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
+          <td><%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%></td>
           <td><%= image_tag post.image.url if post.image? %></td>
           <td><%= link_to 'Show', post %></td>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
