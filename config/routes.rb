@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
     resources :likes
+    resources :favorites
   end
   get 'posts/index'
 
@@ -16,4 +17,9 @@ Rails.application.routes.draw do
   resources :subscribers, only: [:create, :index]
 
   root 'promo#index'
+
+  get 'users', to: 'users#index'
+  get 'users/:id' => 'users#show', :as => :user
+  delete 'users/:id', to: 'users#destroy'
+
 end
