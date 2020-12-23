@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'landing/index'
+  get 'lending/index'
   resources :follows
   resources :categories
   mount Ckeditor::Engine => '/ckeditor'
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
   get 'about', to: 'about#index'
   resources :subscribers, only: [:create, :index]
 
-  root 'promo#index'
+  root 'landing#index'
 
   get 'users', to: 'users#index'
   get 'users/:id' => 'users#show'
