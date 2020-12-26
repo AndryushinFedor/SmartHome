@@ -1,0 +1,14 @@
+
+<div class="categories">
+
+  <h3>Категории</h3>
+  <%= link_to 'Добавить категорию', new_category_path %>
+  <h4>Все категории</h4>
+  <div class="allcategories">
+    <% Category.all.each do |cat| %>
+    <%= link_to cat.name, posts_path(category: cat.name) %> <br>
+    <% end %>
+  </div>
+
+
+</div>

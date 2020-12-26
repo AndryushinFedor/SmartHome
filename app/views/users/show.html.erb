@@ -1,8 +1,8 @@
 <p>ID <%= @user.id %></p>
-<p>Email <%= @user.email %></p>
-<p>Username <%= @user.username %></p>
+<p>Почта: <%= @user.email %></p>
+<p>Ник: <%= @user.username %></p>
 <% if user_signed_in? && current_user.isadmin == true %>
-  <p>Admin <%= @user.isadmin %></p>
+  <p>Аккаунт администратора: <%= @user.isadmin %></p>
 <% end %>
 Followers <%= @user.followers.count %>
 Following <%= link_to @user.followees.count, following_path %>
@@ -24,3 +24,16 @@ In favorites <%= @user.favorites.count %> <%= (@user.favorites.count) == 1 ? 'Po
 <% else %>
 <%# можно добавить кнопку для регистрации или что-нибудь ещё  %>
 <% end%>
+
+<% if user_signed_in? && current_user.isadmin == true %>
+<div class="acc">
+    <h1>Администратор</h1>
+    <p>Добро пожаловать, Олег</p>
+    <h2>Пользователи</h2>
+    <%= render "users/users" %>
+        <div class="">
+          <%= render "users/categories" %>
+    </div>
+</div>
+
+<% end %>

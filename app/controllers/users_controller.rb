@@ -4,19 +4,26 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id])
-      if @user
-        @posts = @user.favorited_posts
-        render actions: :show
-        @favorites = @user.favorites.all
-      else
-          render file: 'public/404', status: 404, formats: [:html]
-      end
+    @users = User.all
+    @user = User.find(params[:id])
+    if @user
+      @posts = @user.favorited_posts
+      render actions: :show
+      @favorites = @user.favorites.all
+    else
+        render file: 'public/404', status: 404, formats: [:html]
     end
+    if params.has_key?(:category)
+      @category = Category.find_by_name(params[:category])
+      @posts = Post.where(category: @category)
+    else
+      @posts = Post.all
+    end
+  end
 
-  def favorited?(post)
-      favorites.find_by(post_id: post.id).present?
-    end
+def favorited?(post)
+    favorites.find_by(post_id: post.id).present?
+  end
 
   def destroy
     @user = User.find(params[:id])
