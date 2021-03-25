@@ -1,4 +1,10 @@
+require 'elasticsearch/model'
 class Post < ApplicationRecord
+
+		include Elasticsearch::Model
+		include Elasticsearch::Model::Callbacks
+		searchkick
+
 		mount_uploader :image, ImageUploader
 		validates :name, :presence => true
 		validates :title, :presence => true,

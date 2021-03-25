@@ -24,7 +24,9 @@ gem 'carrierwave', '~> 2.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.2'
 gem 'ckeditor'
-
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'searchkick'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

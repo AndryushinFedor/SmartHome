@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'promo', to: 'promo#index'
   get 'about', to: 'about#index'
   resources :subscribers, only: [:create, :index]
+  get "search", to: "search#search"
 
   root 'landing#index'
 
