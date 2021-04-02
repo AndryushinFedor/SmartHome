@@ -1,14 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-class A_NewsPostDate extends React.Component {
+class A_LabelImg extends React.Component {
   render () {
     return (
       <div>
-        <p>{this.props.date}</p>
+        <img src="" alt="">
       </div>
     );
   }
 }
 
-export default A_NewsPostDate
+export default A_LabelImg

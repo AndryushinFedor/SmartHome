@@ -4,7 +4,7 @@ class A_NewsPostTag extends React.Component {
   render () {
     return (
       <div>
-        <p></p>
+        <p>{this.props.tag}</p>
       </div>
     );
   }
