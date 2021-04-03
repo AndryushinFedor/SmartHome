@@ -5,7 +5,7 @@ import A_IdeasPost from './A_IdeasPost'
 class A_IdeasPostsList extends React.Component {
     render () {
         return (
-            <div>
+            <div class='IdeasList'>
                 {this.props.ideas.map(idea => (
                     <A_IdeasPost idea={idea}/>
                 ))}

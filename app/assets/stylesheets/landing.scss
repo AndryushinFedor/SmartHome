@@ -2,19 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com
 
+body {
+}
 h2.header {
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: bold;
-font-size: 33.16px;
-line-height: 40px;
-letter-spacing: 0.02em;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33.16px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
 }
 
-.MainLabel {
-  width: 1120px;
-  height: 256px;
+.NewsTitle h3{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  width: 340px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
+
+
 
 .NewsDate p{
   font-family: 'Montserrat';
@@ -31,6 +42,28 @@ letter-spacing: 0.02em;
   width: 352px;
 }
 
+.tag {
+  position: relative;
+  display: inline-block;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 10px;
+}
+
+.tag p{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+  letter-spacing: 0.02em;
+  background-color: #E9E9E9;
+}
+
+
+
 .NewsTag p{
   font-family: 'Montserrat';
   font-style: normal;
@@ -42,9 +75,98 @@ letter-spacing: 0.02em;
   /* Accent */
 
   color: #898F83;
+  padding-bottom: 8px;
 
+}
+
+p.ideas {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: flex-end;
+  letter-spacing: 0.02em;
+
+  /* Accent */
+
+  color: #898F83;
 }
 
 h3.ideas {
-
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 256px;
 }
+
+.MainImg {
+  width: 1120px;
+  height: 256px;
+  height: 186px;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+.News {
+  display: inline-block;
+  padding-right: 32px;
+  padding-bottom: 56px;
+}
+
+.IdeasList {
+  position: relative;
+  display: flex;
+  padding-top: 32px;
+}
+
+.IdeasPostImg {
+  width: 256px;
+}
+
+.Ideas {
+    padding-right: 32px;
+}
+
+.Ideas Img {
+  width: 256px;
+}
+
+.f {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 200px;
+}
+
+.f p {
+  padding-bottom: 8px;
+}
+footer Img {
+  width: 64px;
+  height: 30px;
+}
+
+.foot {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 30px;
+  /* or 231% */
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  }

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 class A_IdeasPostImg extends React.Component {
   render () {
     return (
-      <div>
+      <div class='IdeasPostImg'>
         <img src={this.props.image} alt="" class="NewsImg"/>
       </div>
     );
