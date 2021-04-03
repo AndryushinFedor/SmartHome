@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 class A_NewsPostTitle extends React.Component {
   render () {
     return (
-      <div>
+      <div class='NewsTitle'>
         <h3>{this.props.title}</h3>
       </div>
     );

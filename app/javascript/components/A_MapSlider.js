@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-class AIdeasPostUsername extends React.Component {
+class A_MapSlider extends React.Component {
   render () {
     return (
       <React.Fragment>
@@ -9,4 +9,4 @@ class AIdeasPostUsername extends React.Component {
   }
 }
 
-export default AIdeasPostUsername
+export default A_MapSlider

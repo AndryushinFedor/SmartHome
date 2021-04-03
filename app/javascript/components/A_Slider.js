@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-class AIdeasPostUserImg extends React.Component {
+class A_Slider extends React.Component {
   render () {
     return (
       <React.Fragment>
@@ -9,4 +9,4 @@ class AIdeasPostUserImg extends React.Component {
   }
 }
 
-export default AIdeasPostUserImg
+export default A_Slider

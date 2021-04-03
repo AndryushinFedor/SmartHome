@@ -1,3 +1,7 @@
 
-<%= react_component 'A_Header2' %>
+<%= react_component 'A_Header2', { title: 'Новости' } %>
+<%= react_component 'A_MainPost', { post: @main_label } %>
 <%= react_component 'A_NewsPostsList', { posts: @posts } %>
+<%= react_component 'A_Header2', { title: 'Идеи' } %>
+<%= react_component 'A_TagsList', { tags: @tags } %>
+<%= react_component 'A_IdeasPostsList', { ideas: @ideas } %>

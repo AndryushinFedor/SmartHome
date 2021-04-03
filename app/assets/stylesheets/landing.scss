@@ -1,3 +1,50 @@
 // Place all the styles related to the Landing controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// You can use Sass (SCSS) here: https://sass-lang.com
+
+h2.header {
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: bold;
+font-size: 33.16px;
+line-height: 40px;
+letter-spacing: 0.02em;
+}
+
+.MainLabel {
+  width: 1120px;
+  height: 256px;
+}
+
+.NewsDate p{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+/* identical to box height */
+
+letter-spacing: 0.02em;
+}
+
+.NewsImg {
+  width: 352px;
+}
+
+.NewsTag p{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+
+  /* Accent */
+
+  color: #898F83;
+
+}
+
+h3.ideas {
+
+}

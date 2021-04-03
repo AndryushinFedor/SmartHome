@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 		searchkick
 
 		mount_uploader :image, ImageUploader
-		validates :name, :presence => true
+		validates :tags, :presence => true
 		validates :title, :presence => true,
 											:length => { :minimum => 5 }
 
@@ -16,4 +16,6 @@ class Post < ApplicationRecord
 
 		belongs_to :user
 		belongs_to :category
+
+		scope :classic, -> { where(is_main: false) }
 end

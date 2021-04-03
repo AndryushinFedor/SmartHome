@@ -1,9 +1,9 @@
 class LandingController < ApplicationController
   def index
-    @posts = Post.all
-    @news = [{title: 'title', content: 'content', image: 'path-to-image'},
-             {title: 'title2', content: 'content2', image: 'path-to-image'},
-             {title: 'title3', content: 'content3', image: 'path-to-image'}]
+    @main_label = Post.where(is_main:true).last
+    @posts = Post.classic.where(category_id: 10).order('created_at DESC')
+    @ideas = Post.classic.where(category_id: 11).order('created_at DESC')
+    @tags = Post.pluck(:tags).join(', ').split(', ')
 
     respond_to do |format|
       format.html  # index.html.erb

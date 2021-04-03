@@ -4,7 +4,7 @@ class A_LabelImg extends React.Component {
   render () {
     return (
       <div>
-        <img src="" alt="">
+        <img src="/images/MainLabel.png" alt="">
       </div>
     );
   }

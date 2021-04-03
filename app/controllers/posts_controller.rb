@@ -60,7 +60,10 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
+    begin
+      @post.destroy
+    rescue
+    end
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
@@ -75,6 +78,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :title, :content, :date, :image, :category_id)
+      params.require(:post).permit(:tags, :title, :content, :date, :image, :category_id, :is_main)
     end
 end
