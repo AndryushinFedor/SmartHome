@@ -3,12 +3,12 @@
   <head>
     <div class="top_menu">
       <div class="LogoNav">
-        <img src="/images/logo.svg" alt="">
+        <a href="/"><img src="/images/logo.svg" alt=""></a>
       </div>
       <% Category.where(display_in_navbar: true).each do |cat| %>
         <%= link_to cat.name, posts_path(category: cat.name) %>
       <% end %>
-      <a href="#">Устройства</a>
+      <a href="/posts">Посты</a>
       <%= render 'search/form' %>
     <div class="NavLinks">
       <% if user_signed_in? %>
