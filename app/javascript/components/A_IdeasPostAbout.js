@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 class A_IdeasPostAbout extends React.Component {
   render () {
     return (
-      <div>
+      <div class='IdeasAbout'>
         <p>{this.props.about}</p>
       </div>
     );
