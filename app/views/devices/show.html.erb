@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @device.title %>
+</p
+
+<p>
+  <strong>Price:</strong>
+  <%= @device.price %>
+</p>
+
+<%= image_tag(@device.image.url, alt: 'Image') if @device.image? %>
+
+<p>
+  <strong>Content:</strong>
+  <%= @device.about.html_safe %>
+</p>
+
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<% end %>
+<%= link_to 'Back', devices_path %>

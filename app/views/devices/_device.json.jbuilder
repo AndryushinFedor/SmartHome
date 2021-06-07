@@ -1,0 +1,2 @@
+json.extract! deivce, :id, :title, :about, :created_at, :updated_at
+json.url device_url(device, format: :json)
