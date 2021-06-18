@@ -16,6 +16,12 @@
     <%= form.text_field :tags %>
   </div>
 
+
+  <div class="field">
+    <%= form.label :tags %>
+    <%= form.collection_select :device_ids, Device.all, :id, :title %>
+  </div>
+
   <div>
 	<%= form.label :image %>
 	<%= form.file_field :image %>

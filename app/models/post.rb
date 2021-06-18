@@ -1,6 +1,6 @@
 require 'elasticsearch/model'
-class Post < ApplicationRecord
 
+class Post < ApplicationRecord
 		include Elasticsearch::Model
 		include Elasticsearch::Model::Callbacks
 		searchkick
@@ -10,12 +10,14 @@ class Post < ApplicationRecord
 		validates :title, :presence => true,
 											:length => { :minimum => 5 }
 
-		has_many :comments, :dependent => :destroy
-		has_many :likes, dependent: :destroy
+		has_many :comments, as: :commentable, dependent: :destroy
+		has_many :likes, as: :likeable, dependent: :destroy
 		has_many :favorites, dependent: :destroy
+	  has_many :device_posts
+	  has_many :devices, through: :device_posts
 
 		belongs_to :user
 		belongs_to :category
 
 		scope :classic, -> { where(is_main: false) }
-end
+	end

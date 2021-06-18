@@ -17,6 +17,30 @@
   <%= @device.about.html_safe %>
 </p>
 
+<p><%= @device.likes.count %> <%= (@device.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<hr/>
+
+<% if user_signed_in? %>
+  <% pre_like = @device.likes.find { |like| like.user_id == current_user.id} %>
+  <% if pre_like %>
+    <%= button_to 'Unlike', like_path(pre_like), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', likes_path, method: :post, params: { likeable_type: @device.class.name, likeable_id: @device.id } %>
+  <% end %>
+<% end %>
+
+
+<h2>Comments</h2>
+<%= render @device.comments %>
+
+<h2>Add a comment:</h2>
+
+<% if user_signed_in? %>
+  <%= render partial: "comments/form", locals: { resource: @device } %>
+<% else %>
+  <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+<% end %>
+
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_device_path(@device) %> |
 <% end %>

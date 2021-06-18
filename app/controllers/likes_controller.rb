@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-   before_action :find_post
+   before_action :set_resource, only: [:create]
    before_action :find_like, only: [:destroy]
   # def create
   #   @post.likes.create(user_id: current_user.id)
@@ -9,27 +9,48 @@ class LikesController < ApplicationController
     if already_liked?
       flash[:notice] = "You can't like more than once"
     else
-      @post.likes.create(user_id: current_user.id)
+      @resource.likes.create(user_id: current_user.id)
     end
-    redirect_to post_path(@post)
+    redirect_to final_resource(@resource)
   end
+
   def destroy
-    if !(already_liked?)
+    resource = @like.likeable
+    if @like.user != current_user
       flash[:notice] = "Cannot unlike"
     else
       @like.destroy
     end
-    redirect_to post_path(@post)
+    redirect_to final_resource(resource)
   end
+
   private
+
   def find_like
-     @like = @post.likes.find(params[:id])
+     @like = Like.find(params[:id])
   end
+
+   def set_resource
+     @resource = params[:likeable_type].constantize.find(params[:likeable_id])
+   end
+
   def already_liked?
-    Like.where(user_id: current_user.id, post_id:
-    params[:post_id]).exists?
+    Like.where(user_id: current_user.id, likeable_id: params[:likeable_id], likeable_type: params[:likeable_type]).exists?
   end
+
   def find_post
     @post = Post.find(params[:post_id])
   end
+
+   def final_resource(resource)
+     if resource.class.name == 'Comment'
+       if resource.commentable_type == 'Comment'
+         final_resource(resource.commentable)
+       else
+         resource.commentable
+       end
+     else
+       resource
+     end
+   end
 end

@@ -1,4 +1,6 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
+<%= form_for(resource.comments.build) do |f| %>
+  <%= f.hidden_field :commentable_type, value: resource.class.name %>
+  <%= f.hidden_field :commentable_id, value: resource.id %>
 <div class="field">
     <%= current_user.email %>
 </div>

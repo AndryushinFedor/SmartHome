@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_173726) do
+ActiveRecord::Schema.define(version: 2021_06_16_185416) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -33,11 +33,12 @@ ActiveRecord::Schema.define(version: 2021_05_27_173726) do
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
-    t.integer "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.string "commentable_type"
+    t.integer "commentable_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -49,6 +50,13 @@ ActiveRecord::Schema.define(version: 2021_05_27_173726) do
     t.string "tags"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "devices_posts", id: false, force: :cascade do |t|
+    t.integer "device_id", null: false
+    t.integer "post_id", null: false
+    t.index ["device_id"], name: "index_devices_posts_on_device_id"
+    t.index ["post_id"], name: "index_devices_posts_on_post_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -68,11 +76,12 @@ ActiveRecord::Schema.define(version: 2021_05_27_173726) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "post_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.string "likeable_type"
+    t.integer "likeable_id"
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -111,11 +120,9 @@ ActiveRecord::Schema.define(version: 2021_05_27_173726) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
-  add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"

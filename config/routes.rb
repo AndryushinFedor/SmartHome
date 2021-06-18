@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   # get 'promo/index'
   resources :devices
   resources :posts do
-    resources :comments
-    resources :likes
     resources :favorites
   end
+  resources :likes
+  resources :comments
   get 'posts/index'
 
   # root 'posts#index'

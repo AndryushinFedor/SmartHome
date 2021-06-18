@@ -7,14 +7,6 @@
 
 <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
 
-<h2>Comments</h2>
-<%= render @post.comments %>
-
-<% if user_signed_in? %>
-    <%= render "comments/form" %>
-<% else %>
-    <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
-<% end %>
 
 <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
 
@@ -37,16 +29,25 @@
   <strong>Content:</strong>
   <%= @post.content.html_safe %>
 </p>
+<p>Devices:</p>
+<% @post.devices.each do |device| %>
+  <p>
+    <strong>Device Title:</strong>
+    <%= device.title %>
+  </p>  
+
+  <%= image_tag(device.image.url, alt: 'Image') if device.image? %>
+<% end %>
 <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <p><%= @post.favorites.count %> <%= (@post.favorites.count) == 1 ? 'Favorite' : 'Favorites'%></p>
-<% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+<hr/>
 <% if user_signed_in? %>
 
   <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
   <% if pre_like %>
-    <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+    <%= button_to 'Unlike', like_path(pre_like), method: :delete %>
   <% else %>
-    <%= button_to 'Like', post_likes_path(@post), method: :post %>
+    <%= button_to 'Like', likes_path, method: :post, params: { likeable_type: @post.class.name, likeable_id: @post.id } %>
   <% end %>
 
   <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
@@ -62,5 +63,13 @@
 <% end %>
 <%= link_to 'Back', posts_path %>
 
+<h2>Comments</h2>
+<%= render @post.comments %>
+
 <h2>Add a comment:</h2>
-<%= render "comments/form" %>
+
+<% if user_signed_in? %>
+  <%= render partial: "comments/form", locals: { resource: @post } %>
+<% else %>
+  <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+<% end %>
