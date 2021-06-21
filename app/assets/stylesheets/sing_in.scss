@@ -1,0 +1,22 @@
+body {
+    background-image: url('/images/pattern.svg');
+    background-color: #E9EFF1;
+    // padding-top: 14vw;
+    // padding-left: 16vw;
+  }
+
+h1 {
+    padding-bottom: 20px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.labelr:nth-child(2) {
+    padding-left: 8px;
+}
+
+input:-internal-autofill-selected {
+    background-color: #E9EFF1 !important;
+}

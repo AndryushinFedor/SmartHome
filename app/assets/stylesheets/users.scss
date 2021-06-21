@@ -2,6 +2,194 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+input {
+background: #E9EFF1;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 25px;
+/* identical to box height */
+
+letter-spacing: 0.02em;
+border: none;
+margin: 2px 2px 2px 2px;
+
+/* Date */
+
+color: rgba(0, 0, 0, 0.4);
+}
+
+#user_remember_me {
+width: 32px;
+height: 32px;
+background-color: #E9EEF1;
+border-radius: 100%;
+border: none;
+}
+
+input[type="email" i] {
+  padding: 0;
+}
+
+input:-internal-autofill-selected {
+width: 400px;
+border: none;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 25px;
+appearance: menulist-button;
+background-color: #E9EFF1;
+color: #E9EEF1;
+}
+
+.checkbox {
+  background-color: black;
+}
+.link {
+  padding: 0;
+}
+
+.regMain {
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+width: 468px;
+height: 350.57px;
+left: 601px;
+top: 329px;
+}
+
+.reg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 36px;
+  
+  position: static;
+  width: 403px;
+  left: 65px;
+  top: 0px;
+  
+  background: #FFFFFF;
+  border-radius: 20px;
+  
+  /* Inside Auto Layout */
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 23px;
+}
+
+.labelr {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding-bottom: 20px;
+}
+
+.labelr:nth-child(2) {
+  padding-left: 8px;
+}
+
+.field1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.signupb {
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 3px 36px;
+
+position: static;
+width: 182px;
+height: 39px;
+left: 125px;
+top: 0px;
+font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 33px;
+/* identical to box height */
+
+letter-spacing: 0.02em;
+
+color: #000000;
+}
+
+.forgotb {
+font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 25px;
+display: flex;
+align-items: center;
+letter-spacing: 0.02em;
+color: rgba(0, 0, 0, 0.4);
+padding-left: 20px;
+
+}
+
+.btnreg {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+}
+
+.field {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 3px 19px;
+
+position: static;
+width: 307px;
+height: 39px;
+left: 36px;
+top: 106px;
+
+/* Background */
+
+background: #E9EFF1;
+border-radius: 20px;
+
+}
+
+.actions input {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+padding: 3px 16px;
+height: 39px;
+left: 0px;
+top: 0px;
+font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 33px;
+/* identical to box height */
+
+letter-spacing: 0.02em;
+
+color: #000000;
+
+/* Sineva Soft */
+
+background: #6FB9FF;
+border-radius: 20px;
+}
 
 .g1 {
   font-size: 18px;
@@ -29,3 +217,5 @@ h4 {
   padding-top: 30px;
   padding-bottom: 10px;
 }
+
+
