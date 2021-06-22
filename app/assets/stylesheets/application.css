@@ -15,36 +15,35 @@
  */
 
  .top_menu {
+  position: relative;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
   padding: 64px 115px 32px;
   background-color: #E9EFF1;
-  width: 100%;
+  background-image: none;
 }
+
 .top_menu a {
-  margin: 0 20px;
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 30px;
-  /* identical to box height, or 187% */
+  font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 33px;
+/* identical to box height */
+letter-spacing: 0.02em;
 
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+color: #000000;
 }
 
-.LogoNav Img {
-  margin-left: -23.5vw;
+.aMain {
+  padding-left: 12vw;
+  display: flex;
+  flex-direction: row;
 }
 
-.NavLinks {
-  margin-right: -19vw;
-}
-
-.NavLinks a {
-  margin-left: 16px;
-  margin-right: 0px;
+.aMain a {
+  padding-left: 6vw;
 }
 
 h1 {

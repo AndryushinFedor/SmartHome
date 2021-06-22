@@ -20,6 +20,11 @@ margin: 2px 2px 2px 2px;
 color: rgba(0, 0, 0, 0.4);
 }
 
+.body1 {
+  background-image: url('/images/pattern.svg');
+  padding-bottom: 22vw;
+}
+
 #user_remember_me {
 width: 32px;
 height: 32px;
@@ -53,7 +58,9 @@ color: #E9EEF1;
 }
 
 .regMain {
-  display: flex;
+display: flex;
+margin-left: 34vw;
+margin-top: 4vw;
 flex-direction: row;
 align-items: flex-start;
 padding: 0px;
@@ -146,6 +153,10 @@ padding-left: 20px;
   padding: 0px;
 }
 
+.btnreg:hover {
+transition: color 0.25s linear;
+}
+
 .field {
 display: flex;
 flex-direction: row;
@@ -190,6 +201,12 @@ color: #000000;
 background: #6FB9FF;
 border-radius: 20px;
 }
+
+// .actions:hover {
+//   background: #d7ecff;
+//   border-radius: 20px; 
+//   transition: background-color 0.25s linear;
+// }
 
 .g1 {
   font-size: 18px;

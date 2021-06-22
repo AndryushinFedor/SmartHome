@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <div class="top_menu"> 
+    <div class="top_menu">
       <div class="LogoNav">
         <a href="/"><img src="/images/logo.svg" alt=""></a>
       </div>
-      <% Category.where(display_in_navbar: true).each do |cat| %>
-        <%= link_to cat.name, posts_path(category: cat.name) %>
-      <% end %>
-      <a href="/posts">Посты</a>
+      <div class=aMain>
+      <a href="/posts">Истории</a>
+      <a href="/posts">Идеи</a>
+      <a href="/posts">Устройства</a>
+      </div>
       <%= render 'search/form' %>
     <div class="NavLinks">
       <% if user_signed_in? %>
-        <%= link_to 'Account', current_user %>  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Account', current_user %> 
       <% else %>
-        <%= link_to 'Sign In', new_user_session_path %>  <%= link_to 'Регистрация', new_user_registration_path %>
+        <%= link_to 'Регистрация', new_user_session_path %>  <%= link_to 'Регистрация', new_user_registration_path %>
       <% end %>
     </div>
   </div>

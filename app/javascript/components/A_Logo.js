@@ -4,7 +4,7 @@ class A_Logo extends React.Component {
   render () {
     return (
       <div>
-          <img src="" alt="">
+          <img src="/images/logo.svg" alt="">
       </div>
     );
   }

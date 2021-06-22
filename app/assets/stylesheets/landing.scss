@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com
 
-body {
-  max-width: 1220px;
-  margin-left: 270px;
-  margin-right: 250px;
-}
 h2.header {
   font-family: 'Nunito';
   font-style: normal;
@@ -146,11 +141,12 @@ h3.ideas {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-right: 220px;
+  padding-right: 60px;
 }
 
 .f p {
   padding-bottom: 8px;
+  padding-right:700px;
 }
 footer Img {
   width: 64px;
@@ -163,15 +159,21 @@ footer Img {
   justify-content: center;
   align-items: flex-start;
   padding-top: 120px;
+  padding-bottom: 60px;
   font-family: 'Nunito';
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
-  line-height: 30px;
-  /* or 231% */
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  
+  text-align: right;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
-  padding-bottom: 100px;
+  
+  color: rgba(0, 0, 0, 0.4);
   }
 
   .IdeasAbout {

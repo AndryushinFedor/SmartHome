@@ -1,5 +1,4 @@
 body {
-    background-image: url('/images/pattern.svg');
     background-color: #E9EFF1;
     // padding-top: 14vw;
     // padding-left: 16vw;
@@ -40,6 +39,12 @@ letter-spacing: 0.02em;
 color: #000000;
 
 }
+
+// .actions:hover {
+//   background: #d7ecff;
+//   border-radius: 20px; 
+//   transition: background-color 0.25s linear;
+// }
 
 input:-internal-autofill-selected {
     background-color: #E9EFF1;
