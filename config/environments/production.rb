@@ -109,5 +109,6 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  Elasticsearch::Model.client = Elasticsearch::Client.new host: 'https://paas:0918d0baedc123a91c53292b177feeed@oin-us-east-1.searchly.com'
+  Elasticsearch::Model.client = Elasticsearch::Client.new(host: ENV['SEARCHBOX_URL'], http: { port: 443, scheme: 'https' })
+  Searchkick.client = Elasticsearch::Client.new(hosts: ENV['SEARCHBOX_URL'], retry_on_failure: true, transport_options: {request: {timeout: 250}})
 end
