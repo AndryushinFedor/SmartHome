@@ -1,0 +1,33 @@
+<% @tags.each do |tag| %>
+  <span>
+    <a href="/devices/?tags=<%= tag %>"><%= tag %></a>
+  </span>
+<% end %>
+<span>
+  <%= link_to 'all', devices_path %>
+</span>
+
+<table>
+ <thead>
+   <tr>
+    <th>Title</th>
+    <th>About</th>
+    <th colspan="3"></th>
+   </tr>
+ </thead>
+ <tbody>
+   <% @devices.each do |device| %>
+     <tr>
+      <td><%= device.title %></td>
+      <td><%= raw device.about %></td>
+      <td><%= link_to 'Show', device %></td>
+      <td><%= link_to 'Edit', edit_device_path(device) %></td>
+      <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+   <% end %>
+ </tbody>
+</table>
+
+<span>
+  <%= link_to "New device", new_device_path %>
+</span>

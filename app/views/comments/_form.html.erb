@@ -1,0 +1,14 @@
+<%= form_for(resource.comments.build) do |f| %>
+  <%= f.hidden_field :commentable_type, value: resource.class.name %>
+  <%= f.hidden_field :commentable_id, value: resource.id %>
+<div class="field">
+    <%= current_user.email %>
+</div>
+	<div class="field">
+		<%= f.label :body %><br />
+		<%= f.text_area :body %>
+	</div>
+		<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

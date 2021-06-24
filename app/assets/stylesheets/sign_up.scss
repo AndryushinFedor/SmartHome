@@ -1,0 +1,51 @@
+body {
+    background-color: #E9EFF1;
+    // padding-top: 14vw;
+    // padding-left: 16vw;
+  }
+
+.regbtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 16px;
+    
+    position: static;
+    width: 182px;
+    height: 39px;
+    left: 0px;
+    top: 0px;
+    
+    /* Sineva Soft */
+    
+    background: #6FB9FF;
+    border-radius: 20px;
+}
+
+.regbtn input {
+    font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 33px;
+/* identical to box height */
+position: static;
+width: 175px;
+height: 33px;
+left: 16px;
+bottom: 3px;
+letter-spacing: 0.02em;
+
+color: #000000;
+
+}
+
+// .actions:hover {
+//   background: #d7ecff;
+//   border-radius: 20px; 
+//   transition: background-color 0.25s linear;
+// }
+
+input:-internal-autofill-selected {
+    background-color: #E9EFF1;
+}

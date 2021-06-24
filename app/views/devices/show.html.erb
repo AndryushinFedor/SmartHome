@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @device.title %>
+</p
+
+<p>
+  <strong>Price:</strong>
+  <%= @device.price %>
+</p>
+
+<%= image_tag(@device.image.url, alt: 'Image') if @device.image? %>
+
+<p>
+  <strong>Content:</strong>
+  <%= raw @device.about %>
+</p>
+
+<% if user_signed_in? %>
+  <%= render partial: 'common/votes', locals: { resource: @device } %>
+<% end %>
+
+
+<h2>Comments</h2>
+<%= render @device.comments %>
+
+<h2></h2>
+
+<% if user_signed_in? %>
+  <% if current_user.banned? %>
+    You are banned and you can't post a comment for now.
+  <% else %>
+    <%= render partial: "comments/form", locals: { resource: @device } %>
+  <% end %>
+<% else %>
+  <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+<% end %>
+
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<% end %>
+<%= link_to 'Back', devices_path %>

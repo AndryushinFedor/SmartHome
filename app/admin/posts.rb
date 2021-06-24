@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-  permit_params :tags, :title, :content, :color, :author, :image, :user_id, :category_id, :device_ids
+  permit_params :tags, :title, :content, :color, :author, :image, :user_id, :device_ids
 
   index do
     column :id
@@ -19,7 +19,6 @@ ActiveAdmin.register Post do
     f.inputs 'Detalis' do
       f.input :title
       f.input :tags
-      f.input :category
       f.input :content, as: :ckeditor
       f.input :author
       f.input :image

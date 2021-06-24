@@ -1,6 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :email, :username, :state, :isadmin, :password
-  actions :all, except: %i[new create]
+  permit_params :email, :username, :state, :isadmin
 
   form do |f|
     f.semantic_errors *f.object.errors.keys

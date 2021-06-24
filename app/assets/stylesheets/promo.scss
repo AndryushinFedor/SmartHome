@@ -1,0 +1,158 @@
+// Place all the styles related to the Promo controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+
+.body {
+  background-color: #273A3D;
+  // height: 1035px;
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+  padding-bottom: 200px;
+}
+
+.backImg {
+  z-index: 0
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  padding-left: 6.845vw;
+  padding-top: 3.571vw;
+}
+
+.nav p{
+  padding-top: 0.5vw;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 114%;
+}
+
+
+.link {
+  color: #F6FCFF;
+  text-decoration: none;
+  padding-right: 4.226vw;
+}
+
+.promoBody h1{
+  font-size: 84px;
+  width: 100%;
+  padding: 0;
+  color: #F6FCFF;
+  font-weight: 900;
+  line-height: 106%;
+  letter-spacing: 0.01em;
+}
+
+.promoMain {
+  color: #CADEE1;
+  position: relative;
+  display: flex;
+}
+
+.text {
+  padding-left: 0.893vw;
+  padding-top: 10.119vw;
+}
+
+.text p {
+  padding-top: 1.786vw;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 146%;
+  letter-spacing: 0.01em;
+}
+
+.form {
+  padding-top: 4.048vw;
+}
+
+.form h2 {
+  letter-spacing: 0.01em;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 120%;
+  padding-bottom: 1.786vw;
+  color: #F6FCFF;
+}
+
+.promoMainImg {
+  padding-top: 7.738vw;
+}
+
+.name {
+  color: #F6FCFF;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 114%;
+  padding-right: 40.179vw;
+}
+
+.nav p {
+  font-size: 24px;
+  color: #F6FCFF;
+  cursor: pointer;
+}
+
+.promoMain Img{
+  width: 1023px;
+  height: auto;
+  margin-left: -18vw;
+}
+.promoMain {
+  font-size: 24px;
+
+}
+
+.promoMain h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.formE {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 116%;
+  background: #FFFFFF;
+  border-radius: 40px;
+  border: 2px solid;
+  Width: 307px;
+  padding: 20px;
+
+}
+
+.promoBackImg {
+  position: fixed;
+  width: 1395px;
+  height: 1032px;
+  right: 0;
+  top: 0px;
+}
+
+.go {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  width: 65px;
+  height: 65px;
+  border-radius: 40px;
+  margin-left: 10px;
+  border: 2px solid;
+  background-color: white;
+}
+
+.go:hover {
+  background-color: #CAF1E8;
+}
+
+.nav:hover {
+  color: #CAF1E8;
+}

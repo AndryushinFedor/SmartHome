@@ -1,0 +1,29 @@
+<div class='main'>
+<%= react_component 'A_MainPost', { post: @main_label } if @main_label.present? %>
+<%= react_component 'A_Header2', { title: 'Новинки' } %>
+<%= react_component 'devices/A_DevicesList', { devices: @devices } %>
+<%= react_component 'A_Header2', { title: 'Идеи' } %>
+<%= react_component 'A_NewsPostsList', { posts: @posts } %>
+<%= react_component 'A_IdeasPostsList', { ideas: @ideas } %>
+</div>
+
+<div class="foot">
+  <div class="f">
+  <p>© bblopp (2021-2025)</p>
+</div>
+<div class="f">
+<a href="/">Истории</a>
+</div>
+<div class="f">
+<a href="/">Идеи</a>
+</div>
+<div class="f">
+<a href="/">Устройства</a>
+</div>
+<div class="f">
+<a href="/">Профиль</a>
+</div>
+<div class="f">
+<a href="/">Конфиденциальность</a>
+</div>
+</div>

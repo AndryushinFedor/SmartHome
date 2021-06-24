@@ -1,0 +1,23 @@
+<table class="users">
+  <thead>
+    <tr>
+      <th class="g1">Имя пользователя</th>
+      <th class="g1">Email</th>
+      <th class="g1">Роль</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <!-- <td><%= user.id %></td> -->
+        <td><%= user.username %></td>
+        <td><%= link_to user.email, user %></td>
+
+        <% if user_signed_in? && user.isadmin == true %>
+          <td>Администратор<td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
