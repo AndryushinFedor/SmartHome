@@ -14,19 +14,11 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @device.about.html_safe %>
+  <%= raw @device.about %>
 </p>
 
-<p><%= @device.likes.count %> <%= (@device.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-<hr/>
-
 <% if user_signed_in? %>
-  <% pre_like = @device.likes.find { |like| like.user_id == current_user.id} %>
-  <% if pre_like %>
-    <%= button_to 'Unlike', like_path(pre_like), method: :delete %>
-  <% else %>
-    <%= button_to 'Like', likes_path, method: :post, params: { likeable_type: @device.class.name, likeable_id: @device.id } %>
-  <% end %>
+  <%= render partial: 'common/votes', locals: { resource: @device } %>
 <% end %>
 
 
@@ -36,7 +28,11 @@
 <h2></h2>
 
 <% if user_signed_in? %>
-  <%= render partial: "comments/form", locals: { resource: @device } %>
+  <% if current_user.banned? %>
+    You are banned and you can't post a comment for now.
+  <% else %>
+    <%= render partial: "comments/form", locals: { resource: @device } %>
+  <% end %>
 <% else %>
   <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
 <% end %>

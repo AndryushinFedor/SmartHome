@@ -27,28 +27,27 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @post.content.html_safe %>
+  <%= raw @post.content %>
 </p>
 <p>Devices:</p>
 <% @post.devices.each do |device| %>
   <p>
+
     <strong>Device Title:</strong>
     <%= device.title %>
   </p>  
 
   <%= image_tag(device.image.url, alt: 'Image') if device.image? %>
 <% end %>
-<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+
+<% if user_signed_in? %>
+  <%= render partial: 'common/votes', locals: { resource: @post } %>
+<% end %>
+
 <p><%= @post.favorites.count %> <%= (@post.favorites.count) == 1 ? 'Favorite' : 'Favorites'%></p>
 <hr/>
 <% if user_signed_in? %>
-
-  <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
-  <% if pre_like %>
-    <%= button_to 'Unlike', like_path(pre_like), method: :delete %>
-  <% else %>
-    <%= button_to 'Like', likes_path, method: :post, params: { likeable_type: @post.class.name, likeable_id: @post.id } %>
-  <% end %>
 
   <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
     <% if pre_favorite %>
@@ -69,7 +68,11 @@
 
 
 <% if user_signed_in? %>
-  <%= render partial: "comments/form", locals: { resource: @post } %>
+	<% if current_user.banned? %>
+		You are banned and you can't post a comment for now.
+	<% else %>
+		<%= render partial: "comments/form", locals: { resource: @post } %>
+	<% end %>
 <% else %>
   <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
 <% end %>

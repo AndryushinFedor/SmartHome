@@ -24,7 +24,7 @@ gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dab
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.2'
-gem 'ckeditor'
+gem 'ckeditor', '4.2.4'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'searchkick'
@@ -58,5 +58,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem "react-rails", "~> 2.6"
+gem 'activeadmin'
+gem 'slim-rails'
+gem 'acts_as_votable'

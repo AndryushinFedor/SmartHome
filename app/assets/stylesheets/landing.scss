@@ -11,33 +11,63 @@ h2.header {
   letter-spacing: 0.02em;
 }
 
+.main {
+  padding-left: 7vw;
+}
+
+.NB {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 620px;
+  height: 180px;
+}
+
+.TP {
+  display: flex;
+  flex-direction: row;
+}
+
+.TP span {
+  padding-left: 1vw;
+}
+
 .NewsTitle h3{
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0.02em;
-  width: 340px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+/* identical to box height, or 117% */
+
+letter-spacing: 0.02em;
+
+color: #000000;
 }
 
 
+.News {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
 
 .NewsDate p{
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
+  font-family: Nunito;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 19px;
 /* identical to box height */
 
 letter-spacing: 0.02em;
+
+color: #000000;
+
 }
 
 .NewsImg {
-  width: 352px;
+  width: 229.1px;
+height: 229.1px;
 }
 
 .tag {
@@ -111,12 +141,6 @@ h3.ideas {
   height: 256px;
   padding-top: 32px;
   padding-bottom: 40px;
-}
-
-.News {
-  display: inline-block;
-  padding-right: 32px;
-  padding-bottom: 56px;
 }
 
 .IdeasList {

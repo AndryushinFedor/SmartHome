@@ -77,6 +77,8 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:tags, :title, :content, :date, :image, :category_id, :is_main, :device_ids)
+      permitted = params.require(:post).permit(:tags, :title, :content, :color, :date, :image, :category_id, :is_main, { device_ids: [] })
+      permitted.merge({ device_ids: [] }) if params[:post][:device_ids].blank?
+      permitted
     end
 end

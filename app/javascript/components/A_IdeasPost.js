@@ -13,6 +13,7 @@ class A_IdeasPost extends React.Component {
                 <A_IdeasPostTitle title={this.props.idea.title}/>
                 <A_IdeasPostAbout about={this.props.idea.tags}/>
                 <A_IdeasPostUsername about={this.props.idea.author}/>
+                <A_IdeasPostUsername about={this.props.idea.votes}/>
             </div>
         );
     }

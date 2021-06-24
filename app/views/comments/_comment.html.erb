@@ -2,23 +2,19 @@
 	<b>Commenter:</b>
 	<%= comment.commenter %>
 </p>
-<p>
-	<b>Comment:</b>
+<p class='CommentBody'>
 	<%= comment.body %>
 </p>
-<p><%= comment.likes.count %> <%= (comment.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
 <% if user_signed_in? %>
-  <% pre_like = comment.likes.find { |like| like.user_id == current_user.id} %>
-  <% if pre_like %>
-    <%= button_to 'Unlike', like_path(pre_like), method: :delete %>
-  <% else %>
-    <%= button_to 'Like', likes_path, method: :post, params: { likeable_type: comment.class.name, likeable_id: comment.id } %>
-  <% end %>
+  <%= render partial: 'common/votes', locals: { resource: comment } %>
 <% end %>
 
 <% if user_signed_in? %>
-  <h2>Reply:</h2>
-  <%= render partial: "comments/form", locals: { resource: comment } %>
+	<% if !current_user.banned? %>
+		<h2>Reply:</h2>
+		<%= render partial: "comments/form", locals: { resource: comment } %>
+	<% end %>
 <% end %>
 
 <% if user_signed_in? && current_user.id == comment.user_id  %>

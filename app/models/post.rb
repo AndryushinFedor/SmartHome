@@ -19,5 +19,7 @@ class Post < ApplicationRecord
 		belongs_to :user
 		belongs_to :category
 
-		scope :classic, -> { where(is_main: false) }
+		scope :classic, -> { where.not(is_main: true) }
+
+		acts_as_votable
 	end

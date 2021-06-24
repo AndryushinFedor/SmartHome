@@ -8,4 +8,6 @@ class Device < ApplicationRecord
   has_many :likes, as: :likeable, dependent: :destroy
   has_many :device_posts
   has_many :posts, through: :device_posts
+
+  acts_as_votable
 end

@@ -10,8 +10,6 @@
   <p><%= link_to "Статьи", posts_path, class: "link1" %></p>
 </div>
 <div class="mainBody">
-  <%= link_to "Новый пост", new_post_path, class: "btnPost" %>
-  <%= link_to 'New Category', new_category_path %>
   <table>
     <thead>
       <tr>
@@ -26,8 +24,9 @@
           <td><%= post.tags %></td>
           <td><%= post.title %></td>
           <td><%= post.author %></td>
+          <td><%= post.color %></td>
           <td><%= post.category.name %></td>
-          <td><%= post.content.html_safe %></td>
+          <td><%= raw post.content %></td>
           <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
           <td><%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%></td>
           <td><%= image_tag post.image.url if post.image? %></td>
@@ -39,3 +38,7 @@
     </tbody>
   </table>
 </div>
+
+
+<p><%= link_to "Новый пост", new_post_path %></p>
+<p><%= link_to 'New Category', new_category_path %></p>

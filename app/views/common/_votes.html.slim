@@ -1,0 +1,10 @@
+- vote_up_btn = current_user.voted_up_on?(resource) ? 'non-active' : 'active'
+- vote_down_btn = current_user.voted_down_on?(resource) ? 'non-active' : 'active'
+
+p
+  | Rating:
+  = resource.weighted_score
+
+- if user_signed_in?
+    = button_to 'Vote Up', vote_up_path, params: { votable_type: resource.class.name, votable_id: resource.id }, class: vote_up_btn
+    = button_to 'Vote Down', vote_down_path, params: { votable_type: resource.class.name, votable_id: resource.id }, class: vote_down_btn

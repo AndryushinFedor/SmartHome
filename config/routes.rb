@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'landing/index'
   get 'lending/index'
   resources :follows
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
   resources :users
   post 'users/:id/follow', to: "users#follow", as: "follow_user"
   post 'users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
+  post 'votes/up', to: 'votes#up', as: 'vote_up'
+  post 'votes/down', to: 'votes#down', as: 'vote_down'
   # get 'about/index'
   # get 'promo/index'
   resources :devices

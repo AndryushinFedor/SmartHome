@@ -16,10 +16,11 @@
     <%= form.text_field :tags %>
   </div>
 
-
-  <div class="field">
-    <%= form.label :tags %>
-    <%= form.collection_select :device_ids, Device.all, :id, :title %>
+  <div>
+    <%= form.collection_check_boxes(:device_ids, Device.all, :id, :title) do |device| %>
+      <%= device.label %>
+      <%= device.check_box %>
+    <% end %>
   </div>
 
   <div>
@@ -35,6 +36,11 @@
   <div class="field">
     <%= form.label :category_id %>
     <%= form.select :category_id, Category.pluck(:name, :id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.select :color, ['green', 'orange', 'purple', 'red'] %>
   </div>
 
   <div class="field">
