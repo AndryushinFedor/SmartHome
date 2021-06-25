@@ -9,46 +9,170 @@ h2.header {
   font-size: 33.16px;
   line-height: 40px;
   letter-spacing: 0.02em;
+  padding-bottom: 28px;
+}
+
+h2 {
+  padding-bottom: 8px;
 }
 
 .main {
   padding-left: 7vw;
 }
 
-.NB {
-  background-color: #fff;
-  border-radius: 12px;
-  width: 620px;
-  height: 180px;
+.MainImg {
+  width: 1340px;
+  height: 327px;
+  padding-top: 32px;
+  padding-bottom: 40px;
 }
 
-.TP {
-  display: flex;
-  flex-direction: row;
-}
 
-.TP span {
-  padding-left: 1vw;
-}
-
-.NewsTitle h3{
-  font-family: Nunito;
+.NBNewsTag p{
+  width: 110px;
+  font-family: 'Nunito';
+  background: #E9EFF1;
+border-radius: 20px;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 3px 10px;
+font-family: Nunito;
 font-style: normal;
 font-weight: bold;
-font-size: 24px;
-line-height: 28px;
-/* identical to box height, or 117% */
+font-size: 14px;
+line-height: 19px;
+/* identical to box height */
 
 letter-spacing: 0.02em;
 
 color: #000000;
 }
 
+.NewsTag {
+  padding-left: 38px;
+}
+.News.green {
+  background: #39CA85;
+  border-radius: 12px;
+  width: 356px;
+}
 
-.News {
+
+.News.orange {
+  background: #FFB660;
+  border-radius: 12px;
+  width: 356px;
+}
+.NewsTitle {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 140%;
+  /* or 117% */
+  padding-left: 16px;
+  
+  letter-spacing: 0.02em;
+  
+  color: #FFFFFF;
+}
+
+
+.News.red {
+  background: #FF6A7C;
+  border-radius: 12px;
+  width: 356px;
+}
+
+.News.purple {
+  background: #6E63F0;
+  border-radius: 12px;
+  width: 356px;
+}
+
+.NB {
+  background-color: #fff;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.DevicePrice {
+  font-family: Nunito;
+font-style: normal;
+font-weight: 900;
+font-size: 14px;
+line-height: 19px;
+/* identical to box height */
+
+letter-spacing: 0.02em;
+
+color: #000000;
+
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 6px 12px;
+  background: #E9EFF1;
+border-radius: 12px;
+}
+.pMain {
+  font-family: Vela Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 30px;
+/* identical to box height, or 167% */
+
+letter-spacing: 0.02em;
+padding-bottom: 28px;
+
+color: #000000;
+}
+.vote_count {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+
+  letter-spacing: 0.02em;
+
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 12px;
+border-radius: 20px;
+
+}
+
+.NB h3 {
+  padding: 28px 18px 14px 28px;
+  color: #000000;
+}
+
+.TP {
+  display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding-left: 28px;
+padding-top: 50px;
+}
+
+.TP span {
+  padding-left: 1vw;
+}
+
+
+
+.Newss {
   position: relative;
   display: flex;
   flex-direction: row;
+  border-radius: 12px;
 }
 
 .NewsDate p{
@@ -67,7 +191,8 @@ color: #000000;
 
 .NewsImg {
   width: 229.1px;
-height: 229.1px;
+  height: 229.1px;
+  border-radius: 12px;
 }
 
 .tag {
@@ -90,22 +215,6 @@ height: 229.1px;
   background-color: #E9E9E9;
 }
 
-
-
-.NewsTag p{
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: 0.02em;
-
-  /* Accent */
-
-  color: #898F83;
-  padding-bottom: 8px;
-
-}
 
 p.ideas {
   font-family: 'Nunito';
@@ -134,13 +243,6 @@ h3.ideas {
   padding-top: 8px;
   padding-bottom: 8px;
   width: 256px;
-}
-
-.MainImg {
-  width: 1120px;
-  height: 256px;
-  padding-top: 32px;
-  padding-bottom: 40px;
 }
 
 .IdeasList {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_22_184458) do
+ActiveRecord::Schema.define(version: 2021_06_25_202029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_06_22_184458) do
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
@@ -64,9 +64,9 @@ ActiveRecord::Schema.define(version: 2021_06_22_184458) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "commentable_type"
-    t.integer "commentable_id"
+    t.bigint "commentable_id"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -82,15 +82,15 @@ ActiveRecord::Schema.define(version: 2021_06_22_184458) do
   end
 
   create_table "devices_posts", force: :cascade do |t|
-    t.integer "device_id", null: false
-    t.integer "post_id", null: false
+    t.bigint "device_id", null: false
+    t.bigint "post_id", null: false
     t.index ["device_id"], name: "index_devices_posts_on_device_id"
     t.index ["post_id"], name: "index_devices_posts_on_post_id"
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "post_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_favorites_on_post_id"
@@ -105,11 +105,11 @@ ActiveRecord::Schema.define(version: 2021_06_22_184458) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "likeable_type"
-    t.integer "likeable_id"
+    t.bigint "likeable_id"
     t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -122,9 +122,9 @@ ActiveRecord::Schema.define(version: 2021_06_22_184458) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "author"
     t.string "image"
-    t.integer "user_id", null: false
-    t.integer "category_id", null: false
-    t.boolean "is_main"
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.boolean "is_main", default: false
     t.string "color"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -153,9 +153,9 @@ ActiveRecord::Schema.define(version: 2021_06_22_184458) do
 
   create_table "votes", force: :cascade do |t|
     t.string "votable_type"
-    t.integer "votable_id"
+    t.bigint "votable_id"
     t.string "voter_type"
-    t.integer "voter_id"
+    t.bigint "voter_id"
     t.boolean "vote_flag"
     t.string "vote_scope"
     t.integer "vote_weight"

@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-  permit_params :tags, :title, :content, :color, :author, :image, :user_id, :category_id, :device_ids
+  permit_params :tags, :title, :content, :color, :author, :image, :is_main, :user_id, :category_id, :device_ids
 
   index do
     column :id
@@ -23,9 +23,10 @@ ActiveAdmin.register Post do
       f.input :content, as: :ckeditor
       f.input :author
       f.input :image
-      f.input :color, as: :select, collection: ['green', 'orange', 'purple', 'red']
+      f.input :color, as: :select, collection: ['easy', 'middle', 'hard', 'very hard']
       f.input :user_id, as: :select, collection: User.all.map { |u| [u.username, u.id] }, include_blank: false
       f.input :devices, as: :select
+      f.input :is_main
     end
 
     f.actions
