@@ -16,8 +16,14 @@ class A_Device extends React.Component {
                 <A_DeviceTitle title={this.props.device.title}/>
                 <A_DeviceTag tag={this.props.device.tags}/>
                 <div class='TP'>
+                <div class='repCount'>
+                    <img src="/images/smile.svg" alt="hh"></img>
                     <span className='vote_count'>{this.props.device.votes}</span>
+                </div>
+                <div class='Price'>
                     <A_DevicePrice price={this.props.device.price}/>
+                    <p>&ensp;₽</p>
+                </div>
                 </div>
                 </div>
             </div>
