@@ -5,7 +5,7 @@ import A_Device from './A_Device'
 class A_DevicesList extends React.Component {
     render () {
         return (
-            <div>
+            <div class='DevFlex'>
                 {this.props.devices.map(device => (
                     <A_Device device={device}/>
                 ))}

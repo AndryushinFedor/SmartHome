@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_06_25_202029) do
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.bigint "resource_id"
+    t.integer "resource_id"
     t.string "author_type"
-    t.bigint "author_id"
+    t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
@@ -64,9 +64,9 @@ ActiveRecord::Schema.define(version: 2021_06_25_202029) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.string "commentable_type"
-    t.bigint "commentable_id"
+    t.integer "commentable_id"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -79,18 +79,20 @@ ActiveRecord::Schema.define(version: 2021_06_25_202029) do
     t.string "tags"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_devices_on_user_id"
   end
 
   create_table "devices_posts", force: :cascade do |t|
-    t.bigint "device_id", null: false
-    t.bigint "post_id", null: false
+    t.integer "device_id", null: false
+    t.integer "post_id", null: false
     t.index ["device_id"], name: "index_devices_posts_on_device_id"
     t.index ["post_id"], name: "index_devices_posts_on_post_id"
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.bigint "post_id", null: false
-    t.bigint "user_id", null: false
+    t.integer "post_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_favorites_on_post_id"
@@ -105,11 +107,11 @@ ActiveRecord::Schema.define(version: 2021_06_25_202029) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "likeable_type"
-    t.bigint "likeable_id"
+    t.integer "likeable_id"
     t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -122,8 +124,8 @@ ActiveRecord::Schema.define(version: 2021_06_25_202029) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "author"
     t.string "image"
-    t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
+    t.integer "user_id", null: false
+    t.integer "category_id", null: false
     t.boolean "is_main", default: false
     t.string "color"
     t.index ["category_id"], name: "index_posts_on_category_id"
@@ -147,15 +149,16 @@ ActiveRecord::Schema.define(version: 2021_06_25_202029) do
     t.string "username"
     t.boolean "isadmin", default: false
     t.string "state", default: "active"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
     t.string "votable_type"
-    t.bigint "votable_id"
+    t.integer "votable_id"
     t.string "voter_type"
-    t.bigint "voter_id"
+    t.integer "voter_id"
     t.boolean "vote_flag"
     t.string "vote_scope"
     t.integer "vote_weight"
@@ -168,6 +171,7 @@ ActiveRecord::Schema.define(version: 2021_06_25_202029) do
   end
 
   add_foreign_key "comments", "users"
+  add_foreign_key "devices", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
   add_foreign_key "likes", "users"

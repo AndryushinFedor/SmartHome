@@ -7,10 +7,19 @@ class PostsController < ApplicationController
   def index
       if params.has_key?(:category)
         @category = Category.find_by_name(params[:category])
-        @posts = Post.where(category: @category)
+        posts = Post.where(category: @category)
+        if params[:tags].present?
+          posts = posts.where('tags LIKE ?', "%#{params[:tags]}%")
+        end
+        @posts = posts_presenter(posts)
       else
-        @posts = Post.all
+        posts = Post.all
+        if params[:tags].present?
+          posts = posts.where('tags LIKE ?', "%#{params[:tags]}%")
+        end
+        @posts = posts_presenter(posts)
       end
+      @tags = Post.pluck(:tags).join(',').split(',').map(&:strip).reject { |c| c.empty? }
     end
 
   # GET /posts/1
@@ -81,4 +90,18 @@ class PostsController < ApplicationController
       permitted.merge({ device_ids: [] }) if params[:post][:device_ids].blank?
       permitted
     end
+
+    def posts_presenter(posts)
+      posts.map do |post|
+        {
+          id: post.id,
+          title: post.title,
+          tags: post.tags,
+          image: post.image,
+          color: post.color,
+          created_at: post.created_at,
+          votes: post.weighted_score
+        }
+      end
+  end
 end

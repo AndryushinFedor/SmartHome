@@ -14,8 +14,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user
       @posts = @user.favorited_posts
-      render actions: :show
+      @liked_posts_tags = @user.votes.up.map(&:votable).map(&:tags).join(',').split(',').map(&:strip)
       @favorites = @user.favorites.all
+      @devices = @user.devices
+      @actual_posts = Post.limit(4)
+      @user_posts = @user.posts
+      render actions: :show
     else
         render file: 'public/404', status: 404, formats: [:html]
     end
@@ -27,7 +31,17 @@ class UsersController < ApplicationController
     end
   end
 
-def favorited?(post)
+  def update_avatar
+    @user = User.find(params[:id])
+    if @user
+      @user.update(user_avatar_params)
+      redirect_back(fallback_location: user_path(@user))
+    else
+      render file: 'public/404', status: 404, formats: [:html]
+    end
+  end
+
+  def favorited?(post)
     favorites.find_by(post_id: post.id).present?
   end
 
@@ -58,4 +72,9 @@ def favorited?(post)
     end
   end
 
+  private
+
+  def user_avatar_params
+    params.require(:user).permit(:avatar)
+  end
 end

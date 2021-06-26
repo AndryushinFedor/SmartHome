@@ -13,7 +13,9 @@ class A_Device extends React.Component {
                 <A_DeviceImg image={this.props.device.image.url} is_main={this.props.device.is_main}/>
                 </div>
                 <div class='NB'>
-                <A_DeviceTitle title={this.props.device.title}/>
+                <a href={`devices/${this.props.device.id}`}>
+                    <A_DeviceTitle title={this.props.device.title}/>
+                </a>
                 <A_DeviceTag tag={this.props.device.tags}/>
                 <div class='TP'>
                 <div class='repCount'>

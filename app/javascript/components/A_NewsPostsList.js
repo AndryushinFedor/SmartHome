@@ -5,7 +5,7 @@ import A_NewsPost from './A_NewsPost'
 class A_NewsPostsList extends React.Component {
     render () {
         return (
-            <div>
+            <div class='PostFlex'>
                 {this.props.posts.map(post => (
                     <A_NewsPost post={post}/>
                 ))}

@@ -7,7 +7,7 @@ class DevicesController < ApplicationController
     else
       @devices = Device.all
     end
-    @tags = Device.pluck(:tags).join(',').split(',').map(&:strip)
+    @tags = Device.pluck(:tags).join(',').split(',').map(&:strip).reject { |c| c.empty? }
   end
 
   def show

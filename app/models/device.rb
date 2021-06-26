@@ -4,6 +4,7 @@ class Device < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  belongs_to :user, optional: true
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :likes, as: :likeable, dependent: :destroy
   has_many :device_posts

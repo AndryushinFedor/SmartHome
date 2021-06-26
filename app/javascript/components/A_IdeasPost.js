@@ -10,7 +10,10 @@ class A_IdeasPost extends React.Component {
         return (
             <div class='Ideas'>
                 <A_IdeasPostImg image={this.props.idea.image.url} is_main={this.props.idea.is_main}/>
-                <A_IdeasPostTitle title={this.props.idea.title}/>
+
+                <a href={`posts/${this.props.idea.id}`}>
+                  <A_IdeasPostTitle title={this.props.idea.title}/>
+                </a>
                 <A_IdeasPostAbout about={this.props.idea.tags}/>
                 <A_IdeasPostUsername about={this.props.idea.author}/>
                 <A_IdeasPostUsername about={this.props.idea.votes}/>

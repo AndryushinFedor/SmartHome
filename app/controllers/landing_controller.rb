@@ -19,6 +19,7 @@ class LandingController < ApplicationController
   def posts_presenter(posts)
     posts.map do |post|
       {
+        id: post.id,
         title: post.title,
         tags: post.tags,
         image: post.image,
@@ -32,6 +33,7 @@ class LandingController < ApplicationController
   def devices_presenter(devices)
     devices.map do |device|
       {
+        id: device.id,
         title: device.title,
         tags: device.tags,
         image: device.image,

@@ -14,7 +14,9 @@ class A_NewsPost extends React.Component {
                         <span class='vote_count'>{this.props.post.votes}</span>
                 </div>
                 {/* <A_NewsPostImg image={this.props.post.image.url} is_main={this.props.post.is_main}/> */}
-                <A_NewsPostTitle title={this.props.post.title}/>
+                <a href={`posts/${this.props.post.id}`}>
+                  <A_NewsPostTitle title={this.props.post.title}/>
+                </a>
                 <div class='TagN'>
                 <A_NewsPostTag tag={this.props.post.tags}/>
                 </div>

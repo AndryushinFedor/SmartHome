@@ -176,6 +176,19 @@ color: #000000;
   color: #FFFFFF;
 }
 
+.PostFlex {
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 10vw;
+}
+
+.DevFlex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 100px;
+}
+
+
 .deviceTag a{
 flex-direction: row;
 align-items: center;

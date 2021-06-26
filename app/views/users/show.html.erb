@@ -1,6 +1,35 @@
 <p>ID <%= @user.id %></p>
 <p>Почта: <%= @user.email %></p>
 <p>Ник: <%= @user.username %></p>
+
+######
+<p> Avatar </p>
+<%= image_tag(@user.avatar.url, alt: 'Avatar') if @user.avatar? %>
+
+<p>Update avatar</p>
+<%= form_for @user, url: update_avatar_path do |f| %>
+  <%= f.file_field :avatar %>
+  <%= f.submit 'Upload' %>
+<% end %>
+
+<p>Liked posts tags</p>
+<% @liked_posts_tags&.each do |tag| %>
+  <span class="tag"><%= tag %></span>
+<% end %>
+
+<p>Devices</p>
+<div class='devFlex'>
+<%= react_component 'devices/A_DevicesList', { devices: @devices } %>
+</div>
+
+<p>Interesting</p>
+<%= react_component 'A_NewsPostsList', { posts: @actual_posts } %>
+
+<p>User Posts</p>
+<%= react_component 'A_NewsPostsList', { posts: @user_posts } %>
+########
+
+
 <% if user_signed_in? && current_user.isadmin == true %>
   <p>Аккаунт администратора: <%= @user.isadmin %></p>
 <% end %>
