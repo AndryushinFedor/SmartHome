@@ -1,13 +1,10 @@
+<div class='main'>
 <p id="notice"><%= notice %></p>
-<div class="nav1">
-    <p> <%= link_to "Dio", promo_path, class: "name1" %> </p
-  <% Category.all.each do |cat| %>
-  	<%= link_to cat.name, posts_path(category: cat.name) %> <br>
-  <% end %>
-  <p> <%= link_to "Мы", about_path, class: "link1" %> </p>
-  <p> <%= link_to "Сценарии", posts_path, class: "link1" %> </p>
-  <p> <%= link_to "Устройства", posts_path, class: "link1" %></p>
-  <p><%= link_to "Статьи", posts_path, class: "link1" %></p>
+<div class='searchidea'>
+<%= render 'search/form' %>
+  <%= link_to image_tag("/images/addidea.svg"), new_device_path %>
+</div>
+<div>
 </div>
 <div class="mainBody">
   <table>
@@ -42,3 +39,5 @@
 
 <p><%= link_to "Новый пост", new_post_path %></p>
 <p><%= link_to 'New Category', new_category_path %></p>
+
+</div>
