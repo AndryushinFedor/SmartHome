@@ -16,6 +16,17 @@ h1 {
     padding-left: 8px;
 }
 
+.reg .field {
+    width: 307px;
+height: 39px;
+}
+
+.reg .field input {
+    padding-left: 20px;
+    padding-top: 6px;
+    border-radius: 20px;
+}
+
 input:-internal-autofill-selected {
     background-color: #E9EFF1 !important;
 }

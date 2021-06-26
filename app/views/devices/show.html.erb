@@ -1,21 +1,24 @@
+<div class='main'>
 <p id="notice"><%= notice %></p>
 
-<p>
+<p class='DevTitle'>
   <strong>Title:</strong>
   <%= @device.title %>
 </p
 
 <p>
-  <strong>Price:</strong>
+  <strong class='DevPrice'>Price:</strong>
   <%= @device.price %>
 </p>
-
+<div class='DevInfo'>
+<div class='DevImg'>
 <%= image_tag(@device.image.url, alt: 'Image') if @device.image? %>
-
+</div>
 <p>
   <strong>Content:</strong>
   <%= raw @device.about %>
 </p>
+</div>
 
 <% if user_signed_in? %>
   <%= render partial: 'common/votes', locals: { resource: @device } %>
@@ -41,3 +44,4 @@
 <%= link_to 'Edit', edit_device_path(@device) %> |
 <% end %>
 <%= link_to 'Back', devices_path %>
+</div>

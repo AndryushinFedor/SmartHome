@@ -2,7 +2,9 @@
 <%= react_component 'A_MainPost', { post: @main_label } if @main_label.present? %>
 
 <%= react_component 'A_Header2', { title: 'Новинки' } %>
+<div class='devFlex'>
 <%= react_component 'devices/A_DevicesList', { devices: @devices } %>
+</div>
 <%= react_component 'A_Header2', { title: 'Пора в отпуск!' } %>
 <p class='pMain'>Подборка идей для дома на время вашего отсутствия</p>
 <%= react_component 'A_NewsPostsList', { posts: @vacation } %>

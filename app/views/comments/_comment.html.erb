@@ -1,5 +1,6 @@
+<div class='main'>
 <p>
-	<b>Commenter:</b>
+	<b>Комментатор:</b>
 	<%= comment.commenter %>
 </p>
 <p class='CommentBody'>
@@ -12,7 +13,7 @@
 
 <% if user_signed_in? %>
 	<% if !current_user.banned? %>
-		<h2>Reply:</h2>
+		<h2>Ответить:</h2>
 		<%= render partial: "comments/form", locals: { resource: comment } %>
 	<% end %>
 <% end %>
@@ -30,3 +31,5 @@
   <%= render comment.comments %>
 <% end %>
 <hr/>
+
+</div>
