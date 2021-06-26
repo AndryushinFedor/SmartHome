@@ -1,11 +1,18 @@
+<div class=main>
+<div class='searchdevice'>
+<%= render 'search/form' %>
+  <%= link_to image_tag("/images/adddevice.svg"), new_device_path %>
+</div>
+<div class='deviceTag'>
 <% @tags.each do |tag| %>
   <span>
     <a href="/devices/?tags=<%= tag %>"><%= tag %></a>
   </span>
 <% end %>
 <span>
-  <%= link_to 'all', devices_path %>
+  <%= link_to 'все', devices_path %>
 </span>
+</div>
 
 <table>
  <thead>
@@ -28,6 +35,5 @@
  </tbody>
 </table>
 
-<span>
-  <%= link_to "New device", new_device_path %>
-</span>
+
+</div>
