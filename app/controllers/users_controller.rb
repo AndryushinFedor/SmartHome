@@ -13,12 +13,12 @@ class UsersController < ApplicationController
     @users = User.all
     @user = User.find(params[:id])
     if @user
-      @posts = @user.favorited_posts
+      @posts = posts_presenter(@user.favorited_posts)
       @liked_posts_tags = @user.votes.up.map(&:votable).map(&:tags).join(',').split(',').map(&:strip)
       @favorites = @user.favorites.all
-      @devices = @user.devices
-      @actual_posts = Post.limit(4)
-      @user_posts = @user.posts
+      @devices = devices_presenter(@user.devices)
+      @actual_posts = posts_presenter(Post.limit(4))
+      @user_posts = posts_presenter(@user.posts)
       render actions: :show
     else
         render file: 'public/404', status: 404, formats: [:html]
@@ -76,5 +76,32 @@ class UsersController < ApplicationController
 
   def user_avatar_params
     params.require(:user).permit(:avatar)
+  end
+
+  def posts_presenter(posts)
+    posts.map do |post|
+      {
+        id: post.id,
+        title: post.title,
+        tags: post.tags,
+        image: post.image,
+        color: post.color,
+        created_at: post.created_at,
+        votes: post.weighted_score
+      }
+    end
+  end
+
+  def devices_presenter(devices)
+    devices.map do |device|
+      {
+        id: device.id,
+        title: device.title,
+        tags: device.tags,
+        image: device.image,
+        price: device.price,
+        votes: device.weighted_score
+      }
+    end
   end
 end
